@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-for i in range(97, 123):
+for i in 'abcdefghijklmnopqrstuvwxyz':
     if not (chr(i) == 'q' or chr(i) == 'e'):
-        print(chr(i), end='')
+        print('{}'.format(chr(i)), end='')
