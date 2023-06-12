@@ -49,15 +49,19 @@ int is_palindrome(listint_t **head)
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
+	listint_t *current = head;
 	unsigned int iter_times = 0;
 
-	while (head != NULL)
+	if (head)
 	{
-		if (iter_times == index)
-			return (head);
+		while (current != NULL)
+		{
+			if (iter_times == index)
+				return (current);
 
-		head = head->next;
-		++iter_times;
+			current = current->next;
+			++iter_times;
+		}
 	}
 
 	return (NULL);
