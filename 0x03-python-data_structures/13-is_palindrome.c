@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 	len_list = len_cyc - 2;
 	end = *head;
 
-	for (int i = 0; i < len_cyc; i += 2)
+	for (i = 0; i < len_cyc; i += 2)
 	{
 		if (start[i].n != end[len_list].n)
 			return (0);
@@ -49,7 +49,6 @@ int is_palindrome(listint_t **head)
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_t *current = head;
 	unsigned int iter_times = 0;
 
 	while (head != NULL)
