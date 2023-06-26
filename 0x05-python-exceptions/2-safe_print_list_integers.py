@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     i = 0
-    for item in my_list:
+    for j in range(x):
         try:
-            print("{:d}".format(item), end="")
+            print("{:d}".format(my_list[j]), end="")
             i += 1
         except (ValueError, TypeError):
             continue
