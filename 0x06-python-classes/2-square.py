@@ -3,10 +3,7 @@
 
 
 class Square:
-    """Square class
-    Attributes:
-        __size (int): Size of a side of the square
-    """
+    """Square class with a private attribute - size."""
 
     def __init__(self, size=0):
         """Initializes a square
