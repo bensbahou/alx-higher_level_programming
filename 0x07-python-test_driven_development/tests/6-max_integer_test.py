@@ -2,11 +2,10 @@
 """Unittest for max_integer([..])
 """
 import unittest
-
-max_integer = __import__("6-max_integer").max_integer
-
+max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
+
     """unittest class for max_integer"""
 
     def test_module_docstring(self):
@@ -42,7 +41,7 @@ class TestMaxInteger(unittest.TestCase):
         """Tests for all positive with max at end"""
 
         e = [2, 10, 8, 36, 14, 50, 100, 125, 150]
-        self.assertEqual(max_integer(e), 50)
+        self.assertEqual(max_integer(e), 150)
 
     def test_positive_middle(self):
         """Tests for all positive with max in middle"""
