@@ -1,0 +1,95 @@
+``4-print_square`` module
+=========================
+
+Using ``print_square`` function
+-------------------------------
+
+Import the function from the module:
+	>>> print_square = __import__("4-print_square").print_square
+
+Check for module docstring:
+	 >>> m_doc = __import__("4-print_square").__doc__
+	 >>> len(m_doc) > 1
+	 True
+
+Check for function docstring:
+	 >>> f_doc = __import__("4-print_square").print_square.__doc__
+         >>> len(f_doc) > 1
+         True
+
+Check for no args:
+	 >>> print_square()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_square() missing 1 required positional argument: 'size'
+
+
+Check for passing None:
+	 >>> print_square(None)
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+
+Check for too many args
+	 >>> print_square(11, 82)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_square() takes 1 positional argument but 2 were given
+
+
+Check for positive ints:
+	 >>> print_square(4)
+	 ####
+	 ####
+	 ####
+	 ####
+	 >>> print_square(10)
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 ##########
+	 >>> print_square(0)
+	 >>> print_square(1)
+	 #
+	 >>> print_square(2)
+	 ##
+	 ##
+
+
+Check for negative ints:
+	 >>> print_square(-6)
+	 Traceback (most recent call last):
+         ...
+         ValueError: size must be >= 0
+
+
+
+Check for non-int number types:
+	 >>> print_square(1.5)
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+	 >>> print_square(-5.5)
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+
+Check for non-number types:
+	 >>> print_square((1,))
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+	 >>> print_square("3")
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+	 >>> print_square(True)
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
