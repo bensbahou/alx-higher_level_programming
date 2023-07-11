@@ -39,7 +39,7 @@ try:
     print(f"File size: {file_size:d}")
     for key, value in sorted(status_counts.items()):
         if value:
-            print(f"{key:s}: {value:d}" )
+            print(f"{key:s}: {value:d}")
 
 except KeyboardInterrupt:
     print(f"File size: {file_size:d}")
