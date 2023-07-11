@@ -34,12 +34,15 @@ try:
         if i % 10 == 0:
             print(f"File size: {file_size:d}")
             for key, value in sorted(status_counts.items()):
-                print(f"{key:s}: {value:d}" if value else "")
+                if value:
+                    print(f"{key:s}: {value:d}")
     print(f"File size: {file_size:d}")
     for key, value in sorted(status_counts.items()):
-        print(f"{key:s}: {value:d}" if value else "")
+        if value:
+            print(f"{key:s}: {value:d}" )
 
 except KeyboardInterrupt:
     print(f"File size: {file_size:d}")
     for key, value in sorted(status_counts.items()):
-        print(f"{key:s}: {value:d}" if value else "")
+        if value:
+            print(f"{key:s}: {value:d}")
