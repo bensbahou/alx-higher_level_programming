@@ -87,3 +87,9 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width, end="")
             print("")
+
+    def __str__(self):
+        """Override the __str__ method."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
