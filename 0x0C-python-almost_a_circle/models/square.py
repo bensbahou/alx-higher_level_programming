@@ -46,3 +46,7 @@ class Square(Rectangle):
         """Override the default Square string representation."""
         return "[Square] ({}) {}/{} - {}".format(self.id,
                                                  self.x, self.y, self.width)
+
+    def to_dictionary(self):
+        """Return the  representation of the Square as a dict."""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
