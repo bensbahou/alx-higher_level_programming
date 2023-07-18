@@ -127,3 +127,12 @@ class Rectangle(Base):
 
                 if k in switch:
                     setattr(self, switch[k], v)
+    def to_dictionary(self):
+        """Return the  representation of a Rectangle as a dict."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+        }
