@@ -96,10 +96,30 @@ class Base:
             if not list_objs:
                 csv_file.write("[]")
             else:
-                if cls.__name__ == "Square":
-                    head = ["id", "size", "x", "y"]
-                else:
+                if cls.__name__ == "Rectangle":
                     head = ["id", "width", "height", "x", "y"]
+                else:
+                    head = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(csv_file, fieldnames=head)
-                for row in list_objs:
-                    writer.writerow(row.to_dictionary())
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of classes instantiated from a CSV file.
+        Reads from `<cls.__name__>.csv`.
+        """
+        try:
+            with open(cls.__name__ + ".csv", "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    head = ["id", "width", "height", "x", "y"]
+                else:
+                    head = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=head)
+                list_dicts = [
+                    dict([key, int(value)] for key, value in dict_.items())
+                    for dict_ in list_dicts
+                ]
+                return [cls.create(**dict_) for dict_ in list_dicts]
+        except IOError:
+            return []
