@@ -76,6 +76,7 @@ class Rectangle(Base):
     def area(self):
         """Calculate the area of the Rectangle."""
         return self.width * self.height
+
     def display(self):
         """Trace out the Rectangle using the `#` character."""
         if not self.width or not self.height:
@@ -93,6 +94,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height
         )
+
     def update(self, *args, **kwargs):
         """Update the Rectangle attributes.
         Args:
@@ -125,4 +127,3 @@ class Rectangle(Base):
 
                 if k in switch:
                     setattr(self, switch[k], v)
-
