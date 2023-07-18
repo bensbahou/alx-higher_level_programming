@@ -85,3 +85,21 @@ class Base:
                         for d in Base.from_json_string(jsonfile.read())]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV serialization of a list of objects to a file.
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        with open(cls.__name__ + ".csv", "w", newline="") as csv_file:
+            if not list_objs:
+                csv_file.write("[]")
+            else:
+                if cls.__name__ == "Square":
+                    head = ["id", "size", "x", "y"]
+                else:
+                    head = ["id", "width", "height", "x", "y"]
+                writer = csv.DictWriter(csv_file, fieldnames=head)
+                for row in list_objs:
+                    writer.writerow(row.to_dictionary())
