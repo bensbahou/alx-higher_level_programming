@@ -1,1 +1,1 @@
-Readme for alx-higher_level_programming projects
+0x12. JavaScript - Warm up
