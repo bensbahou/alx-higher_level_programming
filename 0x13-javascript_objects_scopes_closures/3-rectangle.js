@@ -7,7 +7,10 @@ class Rectangle {
   }
 
   print () {
-    console.log(('X'.repeat(this.width) + '\n').repeat(this.height));
+    console.log(
+      ('X'.repeat(this.width) + '\n').repeat(this.height - 1) +
+        'X'.repeat(this.width)
+    );
   }
 }
 
