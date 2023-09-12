@@ -6,15 +6,18 @@ class Rectangle {
     }
   }
 
-  print() {
-    console.log(('X'.repeat(this.width) + '\n').repeat(this.height));
+  print () {
+    console.log(
+      ('X'.repeat(this.width) + '\n').repeat(this.height - 1) +
+        'X'.repeat(this.width)
+    );
   }
 
-  rotate() {
+  rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     [this.width, this.height] = [this.width * 2, this.height * 2];
   }
 }
