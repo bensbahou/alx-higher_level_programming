@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Uses the GitHub API to display a GitHub ID based on given credentials. 
+"""Uses the GitHub API to display a GitHub ID based on given credentials.
 """
 import sys
 import requests
